@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+严肃声明：
+开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
+本软件已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
+可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
+Copyright (c) 2022 程序员十三 all rights reserved.
+版权所有，侵权必究！
+-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ltd.user.cloud.newbee.dao.AdminUserMapper">
+    <resultMap id="BaseResultMap" type="ltd.user.cloud.newbee.entity.AdminUser">
+        <id column="admin_user_id" jdbcType="BIGINT" property="adminUserId" />
+        <result column="login_user_name" jdbcType="VARCHAR" property="loginUserName" />
+        <result column="login_password" jdbcType="VARCHAR" property="loginPassword" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="locked" jdbcType="TINYINT" property="locked" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        admin_user_id, login_user_name, login_password, nick_name, locked
+    </sql>
+
+    <select id="login" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from tb_newbee_mall_admin_user
+        where login_user_name = #{userName,jdbcType=VARCHAR} AND login_password=#{password,jdbcType=VARCHAR} AND locked = 0
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from tb_newbee_mall_admin_user
+        where admin_user_id = #{adminUserId,jdbcType=BIGINT}
+    </select>
+    <insert id="insert" parameterType="ltd.user.cloud.newbee.entity.AdminUser">
+        insert into tb_newbee_mall_admin_user (admin_user_id, login_user_name, login_password,
+        nick_name, locked)
+        values (#{adminUserId,jdbcType=BIGINT}, #{loginUserName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR},
+        #{nickName,jdbcType=VARCHAR}, #{locked,jdbcType=TINYINT})
+    </insert>
+    <insert id="insertSelective" parameterType="ltd.user.cloud.newbee.entity.AdminUser">
+        insert into tb_newbee_mall_admin_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="adminUserId != null">
+                admin_user_id,
+            </if>
+            <if test="loginUserName != null">
+                login_user_name,
+            </if>
+            <if test="loginPassword != null">
+                login_password,
+            </if>
+            <if test="nickName != null">
+                nick_name,
+            </if>
+            <if test="locked != null">
+                locked,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="adminUserId != null">
+                #{adminUserId,jdbcType=BIGINT},
+            </if>
+            <if test="loginUserName != null">
+                #{loginUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="loginPassword != null">
+                #{loginPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="locked != null">
+                #{locked,jdbcType=TINYINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="ltd.user.cloud.newbee.entity.AdminUser">
+        update tb_newbee_mall_admin_user
+        <set>
+            <if test="loginUserName != null">
+                login_user_name = #{loginUserName,jdbcType=VARCHAR},
+            </if>
+            <if test="loginPassword != null">
+                login_password = #{loginPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="locked != null">
+                locked = #{locked,jdbcType=TINYINT},
+            </if>
+        </set>
+        where admin_user_id = #{adminUserId,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="ltd.user.cloud.newbee.entity.AdminUser">
+        update tb_newbee_mall_admin_user
+        set login_user_name = #{loginUserName,jdbcType=VARCHAR},
+        login_password = #{loginPassword,jdbcType=VARCHAR},
+        nick_name = #{nickName,jdbcType=VARCHAR},
+        locked = #{locked,jdbcType=TINYINT}
+        where admin_user_id = #{adminUserId,jdbcType=BIGINT}
+    </update>
+</mapper>
