@@ -28,7 +28,6 @@
         <spring.boot.version>2.6.3</spring.boot.version>
         <spring.cloud.dependencies.version>2021.0.1</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
-        <nacos.client.version>1.4.3</nacos.client.version>
         <mybatis.starter.version>2.2.2</mybatis.starter.version>
         <swagger.version>3.0.0</swagger.version>
         <lombok.version>1.18.16</lombok.version>
@@ -73,12 +72,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-client</artifactId>
-                <version>${nacos.client.version}</version>
             </dependency>
 
             <dependency>

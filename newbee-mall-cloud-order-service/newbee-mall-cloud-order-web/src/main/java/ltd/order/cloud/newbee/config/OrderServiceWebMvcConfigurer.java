@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import java.util.List;
 
 @Configuration
-public class ShopCartServiceWebMvcConfigurer extends WebMvcConfigurationSupport {
+public class OrderServiceWebMvcConfigurer extends WebMvcConfigurationSupport {
 
     @Autowired
     private TokenToAdminUserMethodArgumentResolver tokenToAdminUserMethodArgumentResolver;

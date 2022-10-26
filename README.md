@@ -19,9 +19,9 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 | newbee-mall-cloud    | [newbee-mall-cloud in GitHub](https://github.com/newbee-ltd/newbee-mall-cloud)<br/>[newbee-mall-cloud in Gitee](https://gitee.com/newbee-ltd/newbee-mall-cloud) | 微服务版本、分布式事务、Spring Cloud Alibaba、Nacos、Sentinel、OpenFeign、Seata |
 | newbee-mall-api      | [newbee-mall-api in GitHub](https://github.com/newbee-ltd/newbee-mall-api)<br/>[newbee-mall-api in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api) | 前后端分离、Spring Boot、MyBatis、Swagger、MySQL             |
 | newbee-mall-api-go   | [newbee-mall-api-go in GitHub](https://github.com/newbee-ltd/newbee-mall-api-go)<br/>[newbee-mall-api-go in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api-go) | 前后端分离、Go、Gin、MySQL                                   |
-| newbee-mall-vue-app  | [newbee-mall-vue-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue-app)<br/>[newbee-mall-vue-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue-app) | 前后端分离、Vue 2.x、Vant                                    |
-| newbee-mall-vue3-app | [newbee-mall-vue3-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue3-app)<br/>[newbee-mall-vue3-app in GitHub](https://gitee.com/newbee-ltd/newbee-mall-vue3-app) | 前后端分离、Vue 3.0、Vue-Router 4.0、Vuex 4.0、Vant 3.0      |
-| vue3-admin           | [vue3-admin in GitHub](https://github.com/newbee-ltd/vue3-admin)<br/>[vue3-admin in Gitee](https://gitee.com/newbee-ltd/vue3-admin) | 前后端分离、Vue 3.0、Element-Plus、Vue-Router 4.0、Vite      |
+| newbee-mall-vue-app  | [newbee-mall-vue-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue-app)<br/>[newbee-mall-vue-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue-app) | 前后端分离、Vue2、Vant                                    |
+| newbee-mall-vue3-app | [newbee-mall-vue3-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue3-app)<br/>[newbee-mall-vue3-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue3-app) | 前后端分离、Vue3、Vue-Router4、Vuex4、Vant3      |
+| vue3-admin           | [vue3-admin in GitHub](https://github.com/newbee-ltd/vue3-admin)<br/>[vue3-admin in Gitee](https://gitee.com/newbee-ltd/vue3-admin) | 前后端分离、Vue3、Element-Plus、Vue-Router4、Vite      |
 
 ## 技术选型
 
@@ -47,7 +47,7 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 |      服务网关      |      Spring Cloud Gateway       | 已整合 |
 |       断路器       |            Sentinel             | 待整合 |
 |      链路追踪      |   Spring Cloud Sleuth、Zipkin   | 待整合 |
-|     分布式事务     |              Seata              | 待整合 |
+|     分布式事务     |              Seata              | 已整合 |
 |      日志中心      | ElasticSearch、Logstash、Kibana | 待整合 |
 
 ![technology-selection](./static-files/newbee-mall-cloud-technology-selection.png)
@@ -86,26 +86,29 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 26. [分布式事务解决方案及Seata搭建](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 27. [整合Seata编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 28. [Seata的运行流程分析](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-29. [服务容错之Sentinel介绍与整合](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-30. [Sentinel异常熔断编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-31. [链路追踪之Sleuth+Zipkin整合](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-32. [从零到一搭建微服务项目编码实战（一）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-33. [从零到一搭建微服务项目编码实战（二）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-34. [从零到一搭建微服务项目编码实战（三）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-35. [从零到一搭建微服务项目编码实战（四）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-36. [从零到一搭建微服务项目编码实战（五）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-37. [从零到一搭建微服务项目编码实战（六）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-38. [从零到一搭建微服务项目编码实战（七）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-39. [从零到一搭建微服务项目编码实战（八）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-40. [从零到一搭建微服务项目编码实战（九）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-41. [从零到一搭建微服务项目编码实战（十）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-42. [从零到一搭建微服务项目编码实战（十一）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-43. [从零到一搭建微服务项目编码实战（十二）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-44. [从零到一搭建微服务项目编码实战（十三）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-45. [从零到一搭建微服务项目编码实战（十四）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-46. [从零到一搭建微服务项目编码实战（十五）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-47. [从零到一搭建微服务项目编码实战（十六）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+29. [服务容错之限流与熔断](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+30. [服务容错之Sentinel限流配置实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+31. [服务容错之Sentinel降级熔断配置实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+32. [链路追踪之Sleuth+Zipkin整合](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+33. [从零到一搭建微服务项目编码实战（一）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+34. [从零到一搭建微服务项目编码实战（二）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+35. [从零到一搭建微服务项目编码实战（三）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+36. [从零到一搭建微服务项目编码实战（四）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+37. [从零到一搭建微服务项目编码实战（五）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+38. [从零到一搭建微服务项目编码实战（六）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+39. [从零到一搭建微服务项目编码实战（七）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+40. [从零到一搭建微服务项目编码实战（八）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+41. [从零到一搭建微服务项目编码实战（九）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+42. [从零到一搭建微服务项目编码实战（十）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+43. [从零到一搭建微服务项目编码实战（十一）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+44. [从零到一搭建微服务项目编码实战（十二）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+45. [从零到一搭建微服务项目编码实战（十三）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+46. [从零到一搭建微服务项目编码实战（十四）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+47. [从零到一搭建微服务项目编码实战（十五）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 48. [课程总结](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+49. [(补充章节)Spring Cloud Gateway聚合Swagger接口](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+50. [(补充章节)微服务架构实战项目中整合Seata](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+51. [(补充章节)微服务架构实战项目打包及部署](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 
 ## 联系作者
 

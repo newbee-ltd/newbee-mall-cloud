@@ -49,6 +49,12 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
 
+        <!-- Seata 依赖包 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

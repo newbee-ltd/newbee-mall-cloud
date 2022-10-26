@@ -8,6 +8,7 @@
  */
 package ltd.shopcart.cloud.newbee.config;
 
+import ltd.common.cloud.newbee.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
 import org.springframework.validation.BindException;
@@ -50,8 +51,8 @@ public class ShopCartServiceExceptionHandler {
         //区分是否为自定义异常
         if (e instanceof NewBeeMallException) {
             result.setMessage(e.getMessage());
-            if (e.getMessage().equals("ADMIN_NOT_LOGIN_ERROR") || e.getMessage().equals("ADMIN_TOKEN_EXPIRE_ERROR")) {
-                result.setResultCode(419);
+            if (e.getMessage().equals(ServiceResultEnum.NOT_LOGIN_ERROR.getResult()) || e.getMessage().equals(ServiceResultEnum.TOKEN_EXPIRE_ERROR.getResult())) {
+                result.setResultCode(416);
             }
         } else {
             e.printStackTrace();

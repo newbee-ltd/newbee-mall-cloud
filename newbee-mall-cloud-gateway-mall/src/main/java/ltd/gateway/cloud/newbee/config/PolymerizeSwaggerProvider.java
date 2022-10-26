@@ -35,7 +35,7 @@ public class PolymerizeSwaggerProvider implements SwaggerResourcesProvider {
     public List<SwaggerResource> get() {
         List<SwaggerResource> resources = new ArrayList<>();
         List<String> routes = new ArrayList<>();
-        //过滤出含有swagger的特殊路由配置
+        //需要聚合的路由配置
         routes.add("user-service-swagger-route");
         routes.add("recommend-service-swagger-route");
         routes.add("goods-service-swagger-route");

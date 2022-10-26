@@ -8,6 +8,7 @@
  */
 package ltd.order.cloud.newbee.service.impl;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import ltd.common.cloud.newbee.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.PageResult;
@@ -213,6 +214,7 @@ public class NewBeeMallOrderServiceImpl implements NewBeeMallOrderService {
 
     @Override
     @Transactional
+    @GlobalTransactional
     public String saveOrder(Long mallUserId, MallUserAddress address, List<Long> cartItemIds) {
         //调用购物车服务feign获取数据
         Result<List<NewBeeMallShoppingCartItemDTO>> cartItemDTOListResult = shopCartService.listByCartItemIds(cartItemIds);
