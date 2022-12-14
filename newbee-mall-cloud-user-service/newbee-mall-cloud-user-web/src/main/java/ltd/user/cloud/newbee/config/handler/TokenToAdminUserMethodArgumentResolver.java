@@ -8,6 +8,7 @@
  */
 package ltd.user.cloud.newbee.config.handler;
 
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
 import ltd.user.cloud.newbee.config.annotation.TokenToAdminUser;
 import ltd.common.cloud.newbee.pojo.AdminUserToken;
@@ -44,11 +45,11 @@ public class TokenToAdminUserMethodArgumentResolver implements HandlerMethodArgu
                 ValueOperations<String, AdminUserToken> opsForAdminUserToken = redisTemplate.opsForValue();
                 AdminUserToken adminUserToken = opsForAdminUserToken.get(token);
                 if (adminUserToken == null) {
-                    NewBeeMallException.fail("ADMIN_NOT_LOGIN_ERROR");
+                    NewBeeMallException.fail(ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult());
                 }
                 return adminUserToken;
             } else {
-                NewBeeMallException.fail("ADMIN_NOT_LOGIN_ERROR");
+                NewBeeMallException.fail(ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult());
             }
         }
         return null;

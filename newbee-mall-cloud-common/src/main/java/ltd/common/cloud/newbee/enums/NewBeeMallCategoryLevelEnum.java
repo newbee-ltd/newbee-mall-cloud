@@ -6,7 +6,7 @@
  * Copyright (c) 2022 程序员十三 all rights reserved.
  * 版权所有，侵权必究！
  */
-package ltd.common.cloud.newbee;
+package ltd.common.cloud.newbee.enums;
 
 /**
  * @author 13

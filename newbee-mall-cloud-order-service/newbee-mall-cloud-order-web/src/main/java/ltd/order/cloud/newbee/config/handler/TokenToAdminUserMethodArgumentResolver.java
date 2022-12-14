@@ -8,6 +8,7 @@
  */
 package ltd.order.cloud.newbee.config.handler;
 
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
 
@@ -48,7 +49,7 @@ public class TokenToAdminUserMethodArgumentResolver implements HandlerMethodArgu
                 Result result = newBeeCloudUserService.getAdminUserByToken(token);
 
                 if (result == null || result.getResultCode() != 200 || result.getData() == null) {
-                    NewBeeMallException.fail("ADMIN_NOT_LOGIN_ERROR");
+                    NewBeeMallException.fail(ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult());
                 }
 
                 LinkedHashMap resultData = (LinkedHashMap) result.getData();
@@ -61,7 +62,7 @@ public class TokenToAdminUserMethodArgumentResolver implements HandlerMethodArgu
                 loginAdminUser.setLocked(Byte.valueOf(resultData.get("locked").toString()));
                 return loginAdminUser;
             } else {
-                NewBeeMallException.fail("ADMIN_NOT_LOGIN_ERROR");
+                NewBeeMallException.fail(ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult());
             }
         }
         return null;

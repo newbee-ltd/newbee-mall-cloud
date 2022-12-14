@@ -4,7 +4,7 @@
 ![Version 4.0.0](https://img.shields.io/badge/version-4.0.0-yellow.svg)
 [![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/newbee-ltd/newbee-mall-cloud/blob/master/LICENSE)
 
-newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign 等技术的大型微服务实战项目。
+newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign + Spring Cloud Seluth + Zipkin + ELK 等技术的大型微服务实战项目。
 
 2019 年开源了第一个单体版本，由最初新蜂商城单体项目，逐步过渡到前后端分离和微服务架构的项目，到现在已经“开枝散叶”，成长为一系列的项目集合，下图为新蜂商城项目由 2019 年至 2022 年的开源历程。由基础项目慢慢优化，不断地增加技术栈，让用户学习到越来越多知识点的同时，对开源作者的技术提升也是一个很大的帮助。
 
@@ -45,10 +45,10 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 |      服务通信      |           Open Feign            | 已整合 |
 |     负载均衡器     |    Spring Cloud Loadbalancer    | 已整合 |
 |      服务网关      |      Spring Cloud Gateway       | 已整合 |
-|       断路器       |            Sentinel             | 待整合 |
-|      链路追踪      |   Spring Cloud Sleuth、Zipkin   | 待整合 |
+|       断路器       |            Sentinel             | 已整合 |
+|      链路追踪      |   Spring Cloud Sleuth、Zipkin   | 已整合 |
 |     分布式事务     |              Seata              | 已整合 |
-|      日志中心      | ElasticSearch、Logstash、Kibana | 待整合 |
+|      日志中心      | ElasticSearch、Logstash、Kibana | 已整合 |
 
 ![technology-selection](./static-files/newbee-mall-cloud-technology-selection.png)
 
@@ -109,6 +109,10 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 49. [(补充章节)Spring Cloud Gateway聚合Swagger接口](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 50. [(补充章节)微服务架构实战项目中整合Seata](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 51. [(补充章节)微服务架构实战项目打包及部署](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+52. [(补充章节)微服务架构实战项目中整合Sentinel](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+53. [(补充章节)微服务架构实战项目中整合Seluth、Zipkin](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+54. [(补充章节)链路追踪之ELK日志中心搭建](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+55. [(补充章节)微服务架构实战项目中整合ELK日志中心](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 
 ## 联系作者
 

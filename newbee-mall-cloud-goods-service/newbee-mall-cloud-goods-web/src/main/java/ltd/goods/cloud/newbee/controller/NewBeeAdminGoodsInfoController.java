@@ -8,10 +8,11 @@
  */
 package ltd.goods.cloud.newbee.controller;
 
+import io.seata.core.context.RootContext;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.dto.ResultGenerator;
@@ -193,6 +194,7 @@ public class NewBeeAdminGoodsInfoController {
     @PutMapping("/updateStock")
     @ApiOperation(value = "修改库存", notes = "")
     public Result updateStock(@RequestBody UpdateStockNumDTO updateStockNumDTO) {
+        System.out.println("RootContext.getXID()="+RootContext.getXID());
         return ResultGenerator.genSuccessResult(newBeeMallGoodsService.updateStockNum(updateStockNumDTO.getStockNumDTOS()));
     }
 

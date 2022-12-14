@@ -8,7 +8,7 @@
  */
 package ltd.order.cloud.newbee.config.handler;
 
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
 import ltd.common.cloud.newbee.pojo.MallUserToken;

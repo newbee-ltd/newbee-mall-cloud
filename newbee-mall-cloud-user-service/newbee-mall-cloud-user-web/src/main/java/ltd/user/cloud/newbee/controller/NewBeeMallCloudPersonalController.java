@@ -11,7 +11,7 @@ package ltd.user.cloud.newbee.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.dto.ResultGenerator;
 import ltd.common.cloud.newbee.pojo.MallUserToken;

@@ -8,9 +8,10 @@
  */
 package ltd.shopcart.cloud.newbee.controller;
 
+import io.seata.core.context.RootContext;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.PageResult;
 import ltd.common.cloud.newbee.dto.Result;
@@ -23,10 +24,12 @@ import ltd.shopcart.cloud.newbee.controller.param.UpdateCartItemParam;
 import ltd.shopcart.cloud.newbee.controller.vo.NewBeeMallShoppingCartItemVO;
 import ltd.shopcart.cloud.newbee.entity.NewBeeMallShoppingCartItem;
 import ltd.shopcart.cloud.newbee.service.NewBeeMallShoppingCartService;
+import org.springframework.http.HttpRequest;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -137,7 +140,8 @@ public class NewBeeMallShoppingCartController {
 
     @DeleteMapping("/shop-cart/deleteByCartItemIds")
     @ApiOperation(value = "批量删除购物项", notes = "")
-    public Result<Boolean> deleteByCartItemIds(@RequestParam("cartItemIds") List<Long> cartItemIds) {
+    public Result<Boolean> deleteByCartItemIds(@RequestParam("cartItemIds") List<Long> cartItemIds, HttpServletRequest request) {
+        System.out.println("RootContext.getXID()="+ RootContext.getXID());
         if (CollectionUtils.isEmpty(cartItemIds)) {
             return ResultGenerator.genFailResult("error param");
         }

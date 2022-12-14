@@ -9,7 +9,7 @@
 package ltd.order.cloud.newbee.service.impl;
 
 import io.seata.spring.annotation.GlobalTransactional;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.PageResult;
 import ltd.common.cloud.newbee.dto.Result;

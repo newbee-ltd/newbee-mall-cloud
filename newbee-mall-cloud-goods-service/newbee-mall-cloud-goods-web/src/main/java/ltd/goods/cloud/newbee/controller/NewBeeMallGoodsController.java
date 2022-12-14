@@ -11,7 +11,7 @@ package ltd.goods.cloud.newbee.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.PageResult;
 import ltd.common.cloud.newbee.dto.Result;
@@ -27,6 +27,7 @@ import ltd.goods.cloud.newbee.service.NewBeeMallGoodsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -43,6 +44,23 @@ public class NewBeeMallGoodsController {
 
     @Resource
     private NewBeeMallGoodsService newBeeMallGoodsService;
+
+    @GetMapping("/test1")
+    public Result<String> test1() throws BindException {
+        throw new BindException(1,"BindException");
+    }
+
+    @GetMapping("/test2")
+    public Result<String> test2() throws NewBeeMallException {
+        NewBeeMallException.fail("NewBeeMallException");
+        return ResultGenerator.genSuccessResult("test2");
+    }
+
+    @GetMapping("/test3")
+    public Result<String> test3() throws Exception {
+        int i=1/0;
+        return ResultGenerator.genSuccessResult("test2");
+    }
 
     @GetMapping("/search")
     @ApiOperation(value = "商品搜索接口", notes = "根据关键字和分类id进行搜索")

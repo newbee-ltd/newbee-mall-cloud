@@ -8,8 +8,8 @@
  */
 package ltd.goods.cloud.newbee.service.impl;
 
-import ltd.common.cloud.newbee.NewBeeMallCategoryLevelEnum;
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.NewBeeMallCategoryLevelEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.PageResult;
 import ltd.common.cloud.newbee.util.BeanUtil;

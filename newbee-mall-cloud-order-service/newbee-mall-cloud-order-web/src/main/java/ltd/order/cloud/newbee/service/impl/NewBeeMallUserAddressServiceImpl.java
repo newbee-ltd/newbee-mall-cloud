@@ -8,7 +8,7 @@
  */
 package ltd.order.cloud.newbee.service.impl;
 
-import ltd.common.cloud.newbee.ServiceResultEnum;
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
 import ltd.common.cloud.newbee.util.BeanUtil;
 import ltd.order.cloud.newbee.controller.vo.NewBeeMallUserAddressVO;

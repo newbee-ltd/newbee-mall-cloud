@@ -8,8 +8,11 @@
  */
 package ltd.recommend.cloud.newbee.config;
 
+import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.exception.NewBeeMallException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -25,8 +28,11 @@ import java.util.Objects;
 @RestControllerAdvice
 public class RecommendServiceExceptionHandler {
 
+    private static final Logger log = LoggerFactory.getLogger(RecommendServiceExceptionHandler.class);
+
     @ExceptionHandler(BindException.class)
     public Object bindException(BindException e) {
+        log.error("RecommendServiceExceptionHandler:",e);
         Result result = new Result();
         result.setResultCode(510);
         BindingResult bindingResult = e.getBindingResult();
@@ -36,6 +42,7 @@ public class RecommendServiceExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Object bindException(MethodArgumentNotValidException e) {
+        log.error("RecommendServiceExceptionHandler:",e);
         Result result = new Result();
         result.setResultCode(510);
         BindingResult bindingResult = e.getBindingResult();
@@ -45,12 +52,13 @@ public class RecommendServiceExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public Object handleException(Exception e, HttpServletRequest req) {
+        log.error("RecommendServiceExceptionHandler:",e);
         Result result = new Result();
         result.setResultCode(500);
         //区分是否为自定义异常
         if (e instanceof NewBeeMallException) {
             result.setMessage(e.getMessage());
-            if (e.getMessage().equals("ADMIN_NOT_LOGIN_ERROR") || e.getMessage().equals("ADMIN_TOKEN_EXPIRE_ERROR")) {
+            if (e.getMessage().equals(ServiceResultEnum.ADMIN_NOT_LOGIN_ERROR.getResult()) || e.getMessage().equals(ServiceResultEnum.ADMIN_TOKEN_EXPIRE_ERROR.getResult())) {
                 result.setResultCode(419);
             }
         } else {
