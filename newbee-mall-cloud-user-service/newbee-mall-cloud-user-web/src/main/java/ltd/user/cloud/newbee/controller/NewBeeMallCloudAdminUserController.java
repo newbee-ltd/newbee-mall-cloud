@@ -44,7 +44,7 @@ public class NewBeeMallCloudAdminUserController {
         logger.info("manage login api,adminName={},loginResult={}", adminLoginParam.getUserName(), loginResult);
 
         //登录成功
-        if (!StringUtils.isEmpty(loginResult) && loginResult.length() == 32) {
+        if (StringUtils.hasText(loginResult) && loginResult.length() == 32) {
             Result result = ResultGenerator.genSuccessResult();
             result.setData(loginResult);
             return result;

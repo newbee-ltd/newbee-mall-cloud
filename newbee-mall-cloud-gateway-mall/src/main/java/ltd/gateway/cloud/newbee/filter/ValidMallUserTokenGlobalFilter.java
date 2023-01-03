@@ -72,7 +72,7 @@ public class ValidMallUserTokenGlobalFilter implements GlobalFilter, Ordered {
 
         String token = headers.getFirst("token");
 
-        if (StringUtils.isEmpty(token)) {
+        if (!StringUtils.hasText(token)) {
             // 返回错误提示
             return wrapErrorResponse(exchange, chain);
         }

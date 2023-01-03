@@ -53,7 +53,7 @@ public class NewBeeMallCloudPersonalController {
         logger.info("login api,loginName={},loginResult={}", mallUserLoginParam.getLoginName(), loginResult);
 
         //登录成功
-        if (!StringUtils.isEmpty(loginResult) && loginResult.length() == 32) {
+        if (StringUtils.hasText(loginResult) && loginResult.length() == 32) {
             Result result = ResultGenerator.genSuccessResult();
             result.setData(loginResult);
             return result;

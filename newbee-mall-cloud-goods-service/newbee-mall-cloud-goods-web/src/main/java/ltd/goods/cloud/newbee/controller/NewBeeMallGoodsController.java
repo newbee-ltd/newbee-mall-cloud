@@ -74,7 +74,7 @@ public class NewBeeMallGoodsController {
 
         Map params = new HashMap(8);
         //两个搜索参数都为空，直接返回异常
-        if (goodsCategoryId == null && StringUtils.isEmpty(keyword)) {
+        if (goodsCategoryId == null && !StringUtils.hasText(keyword)) {
             NewBeeMallException.fail("非法的搜索参数");
         }
         if (pageNumber == null || pageNumber < 1) {
@@ -84,10 +84,10 @@ public class NewBeeMallGoodsController {
         params.put("page", pageNumber);
         params.put("limit", 10);
         //对keyword做过滤 去掉空格
-        if (!StringUtils.isEmpty(keyword)) {
+        if (StringUtils.hasText(keyword)) {
             params.put("keyword", keyword);
         }
-        if (!StringUtils.isEmpty(orderBy)) {
+        if (StringUtils.hasText(orderBy)) {
             params.put("orderBy", orderBy);
         }
         //搜索上架状态下的商品

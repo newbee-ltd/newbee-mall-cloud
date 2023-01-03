@@ -72,7 +72,7 @@ public class NewBeeAdminGoodsInfoController {
         Map params = new HashMap(8);
         params.put("page", pageNumber);
         params.put("limit", pageSize);
-        if (!StringUtils.isEmpty(goodsName)) {
+        if (StringUtils.hasText(goodsName)) {
             params.put("goodsName", goodsName);
         }
         if (goodsSellStatus != null) {
