@@ -6,9 +6,9 @@
 
 newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign + Spring Cloud Seluth + Zipkin + ELK 等技术的大型微服务实战项目。
 
-2019 年开源了第一个单体版本，由最初新蜂商城单体项目，逐步过渡到前后端分离和微服务架构的项目，到现在已经“开枝散叶”，成长为一系列的项目集合，下图为新蜂商城项目由 2019 年至 2022 年的开源历程。由基础项目慢慢优化，不断地增加技术栈，让用户学习到越来越多知识点的同时，对开源作者的技术提升也是一个很大的帮助。
+2019 年开源了第一个单体版本，由最初新蜂商城单体项目，逐步过渡到前后端分离和微服务架构的项目，到现在已经“开枝散叶”，成长为一系列的项目集合，下图为新蜂商城项目由 2019 年至 2023 年的开源历程。由基础项目慢慢优化，不断地增加技术栈，让用户学习到越来越多知识点的同时，对开源作者的技术提升也是一个很大的帮助。
 
-![newbee-mall-course-2022](./static-files/newbee-mall-course-2022.png)
+![newbee-mall-course-2022](./static-files/newbee-mall-course-2023.png)
 
 **坚持不易，如果觉得项目还不错的话可以给项目一个 Star 吧，也是对我自 2019 年开始一直更新这个项目的一种鼓励啦，谢谢各位的支持。**
 
@@ -19,9 +19,9 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 | newbee-mall-cloud    | [newbee-mall-cloud in GitHub](https://github.com/newbee-ltd/newbee-mall-cloud)<br/>[newbee-mall-cloud in Gitee](https://gitee.com/newbee-ltd/newbee-mall-cloud) | 微服务版本、分布式事务、Spring Cloud Alibaba、Nacos、Sentinel、OpenFeign、Seata |
 | newbee-mall-api      | [newbee-mall-api in GitHub](https://github.com/newbee-ltd/newbee-mall-api)<br/>[newbee-mall-api in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api) | 前后端分离、Spring Boot、MyBatis、Swagger、MySQL             |
 | newbee-mall-api-go   | [newbee-mall-api-go in GitHub](https://github.com/newbee-ltd/newbee-mall-api-go)<br/>[newbee-mall-api-go in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api-go) | 前后端分离、Go、Gin、MySQL                                   |
-| newbee-mall-vue-app  | [newbee-mall-vue-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue-app)<br/>[newbee-mall-vue-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue-app) | 前后端分离、Vue2、Vant                                    |
-| newbee-mall-vue3-app | [newbee-mall-vue3-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue3-app)<br/>[newbee-mall-vue3-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue3-app) | 前后端分离、Vue3、Vue-Router4、Vuex4、Vant3      |
-| vue3-admin           | [vue3-admin in GitHub](https://github.com/newbee-ltd/vue3-admin)<br/>[vue3-admin in Gitee](https://gitee.com/newbee-ltd/vue3-admin) | 前后端分离、Vue3、Element-Plus、Vue-Router4、Vite      |
+| newbee-mall-vue-app  | [newbee-mall-vue-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue-app)<br/>[newbee-mall-vue-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue-app) | 前后端分离、Vue2、Vant                                       |
+| newbee-mall-vue3-app | [newbee-mall-vue3-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue3-app)<br/>[newbee-mall-vue3-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue3-app) | 前后端分离、Vue3、Vue-Router4、Pinia、Vant4                  |
+| vue3-admin           | [vue3-admin in GitHub](https://github.com/newbee-ltd/vue3-admin)<br/>[vue3-admin in Gitee](https://gitee.com/newbee-ltd/vue3-admin) | 前后端分离、Vue3、Element-Plus、Vue-Router4、Vite            |
 
 ## 技术选型
 
@@ -71,6 +71,9 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 11. [Nacos安装与配置](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 12. [Nacos整合之服务注册编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 13. [Nacos整合之服务发现编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+13. [(补充章节)谈一谈配置中心](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+13. [(补充章节)整合Nacos配置中心编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+13. [(补充章节)配置动态刷新及多配置读取编码实践](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 14. [服务通信之负载均衡器](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 15. [负载均衡器的源码分析及自定义负载均衡算法](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 16. [服务治理与服务通信总结](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
@@ -105,7 +108,6 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 45. [从零到一搭建微服务项目编码实战（十三）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 46. [从零到一搭建微服务项目编码实战（十四）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 47. [从零到一搭建微服务项目编码实战（十五）](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
-48. [课程总结](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 49. [(补充章节)Spring Cloud Gateway聚合Swagger接口](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 50. [(补充章节)微服务架构实战项目中整合Seata](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 51. [(补充章节)微服务架构实战项目打包及部署](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
@@ -113,6 +115,7 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 53. [(补充章节)微服务架构实战项目中整合Seluth、Zipkin](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 54. [(补充章节)链路追踪之ELK日志中心搭建](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 55. [(补充章节)微服务架构实战项目中整合ELK日志中心](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
+55. [课程总结](https://juejin.cn/book/7085254558678515742?suid=1996368849416216&source=android)
 
 ## 联系作者
 
