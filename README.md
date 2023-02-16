@@ -2,7 +2,7 @@
 
 ![Build Status](https://img.shields.io/badge/build-passing-green.svg)
 ![Version 4.0.0](https://img.shields.io/badge/version-4.0.0-yellow.svg)
-[![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/newbee-ltd/newbee-mall-cloud/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://github.com/newbee-ltd/newbee-mall-cloud/blob/main/LICENSE)
 
 newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign + Spring Cloud Seluth + Zipkin + ELK 等技术的大型微服务实战项目。
 
@@ -128,7 +128,7 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 - 我的邮箱：2449207463@qq.com
 - QQ技术交流群：791509631
 
-> newbee-mall 在 GitHub 和国内的码云都创建了代码仓库，如果有人访问 GitHub 比较慢的话，建议在 Gitee 上查看该项目，两个仓库会保持同步更新。
+> newbee-mall-cloud 在 GitHub 和国内的码云都创建了代码仓库，如果有人访问 GitHub 比较慢的话，建议在 Gitee 上查看该项目，两个仓库会保持同步更新。
 
 - [newbee-mall-cloud in GitHub](https://github.com/newbee-ltd/newbee-mall-cloud)
 - [newbee-mall-cloud in Gitee](https://gitee.com/newbee-ltd/newbee-mall-cloud)
