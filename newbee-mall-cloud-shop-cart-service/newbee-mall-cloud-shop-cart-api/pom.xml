@@ -9,18 +9,18 @@
     <groupId>ltd.shopcart.newbee.cloud</groupId>
     <artifactId>newbee-mall-cloud-shop-cart-api</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>newbee-mall-cloud-shop-cart-api</name>
     <description>购物车服务openfeign</description>
 
     <parent>
         <groupId>ltd.newbee.cloud</groupId>
         <artifactId>newbee-mall-cloud-shop-cart-service</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.3-SNAPSHOT</version>
     </parent>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>ltd.newbee.cloud</groupId>
             <artifactId>newbee-mall-cloud-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.3-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

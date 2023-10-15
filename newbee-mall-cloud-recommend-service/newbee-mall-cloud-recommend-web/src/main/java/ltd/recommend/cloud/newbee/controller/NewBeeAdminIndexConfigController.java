@@ -3,14 +3,14 @@
  * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
  * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
  * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2022 程序员十三 all rights reserved.
+ * Copyright (c) 2023 程序员十三 all rights reserved.
  * 版权所有，侵权必究！
  */
 package ltd.recommend.cloud.newbee.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.Result;
@@ -28,8 +28,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +40,7 @@ import java.util.Map;
  * @link https://github.com/newbee-ltd
  */
 @RestController
-@Api(value = "v1", tags = "后台管理系统首页配置模块接口")
+@Tag(description = "v1", name = "后台管理系统首页配置模块接口")
 @RequestMapping("/indexConfigs/admin")
 public class NewBeeAdminIndexConfigController {
 
@@ -53,10 +53,10 @@ public class NewBeeAdminIndexConfigController {
      * 列表
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    @ApiOperation(value = "首页配置列表", notes = "首页配置列表")
-    public Result list(@RequestParam(required = false) @ApiParam(value = "页码") Integer pageNumber,
-                       @RequestParam(required = false) @ApiParam(value = "每页条数") Integer pageSize,
-                       @RequestParam(required = false) @ApiParam(value = "1-搜索框热搜 2-搜索下拉框热搜 3-(首页)热销商品 4-(首页)新品上线 5-(首页)为你推荐") Integer configType, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "首页配置列表", description = "首页配置列表")
+    public Result list(@RequestParam(required = false) @Parameter(description = "页码") Integer pageNumber,
+                       @RequestParam(required = false) @Parameter(description = "每页条数") Integer pageSize,
+                       @RequestParam(required = false) @Parameter(description = "1-搜索框热搜 2-搜索下拉框热搜 3-(首页)热销商品 4-(首页)新品上线 5-(首页)为你推荐") Integer configType, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         if (pageNumber == null || pageNumber < 1 || pageSize == null || pageSize < 10) {
             return ResultGenerator.genFailResult("分页参数异常！");
@@ -77,8 +77,8 @@ public class NewBeeAdminIndexConfigController {
      * 添加
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ApiOperation(value = "新增首页配置项", notes = "新增首页配置项")
-    public Result save(@RequestBody @Valid IndexConfigAddParam indexConfigAddParam, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "新增首页配置项", description = "新增首页配置项")
+    public Result save(@RequestBody @Valid IndexConfigAddParam indexConfigAddParam, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         IndexConfig indexConfig = new IndexConfig();
         BeanUtil.copyProperties(indexConfigAddParam, indexConfig);
@@ -95,8 +95,8 @@ public class NewBeeAdminIndexConfigController {
      * 修改
      */
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    @ApiOperation(value = "修改首页配置项", notes = "修改首页配置项")
-    public Result update(@RequestBody @Valid IndexConfigEditParam indexConfigEditParam, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "修改首页配置项", description = "修改首页配置项")
+    public Result update(@RequestBody @Valid IndexConfigEditParam indexConfigEditParam, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         IndexConfig indexConfig = new IndexConfig();
         BeanUtil.copyProperties(indexConfigEditParam, indexConfig);
@@ -112,8 +112,8 @@ public class NewBeeAdminIndexConfigController {
      * 详情
      */
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
-    @ApiOperation(value = "获取单条首页配置项信息", notes = "根据id查询")
-    public Result info(@PathVariable("id") Long id, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "获取单条首页配置项信息", description = "根据id查询")
+    public Result info(@PathVariable("id") Long id, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         IndexConfig config = newBeeMallIndexConfigService.getIndexConfigById(id);
         if (config == null) {
@@ -126,8 +126,8 @@ public class NewBeeAdminIndexConfigController {
      * 删除
      */
     @RequestMapping(value = "/batchDelete", method = RequestMethod.DELETE)
-    @ApiOperation(value = "批量删除首页配置项信息", notes = "批量删除首页配置项信息")
-    public Result delete(@RequestBody BatchIdParam batchIdParam, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "批量删除首页配置项信息", description = "批量删除首页配置项信息")
+    public Result delete(@RequestBody BatchIdParam batchIdParam, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         if (batchIdParam == null || batchIdParam.getIds().length < 1) {
             return ResultGenerator.genFailResult("参数异常！");

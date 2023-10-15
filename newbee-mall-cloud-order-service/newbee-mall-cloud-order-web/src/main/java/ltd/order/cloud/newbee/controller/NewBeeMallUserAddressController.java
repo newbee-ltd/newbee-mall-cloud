@@ -3,13 +3,14 @@
  * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
  * 本软件已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
  * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2022 程序员十三 all rights reserved.
+ * Copyright (c) 2023 程序员十三 all rights reserved.
  * 版权所有，侵权必究！
  */
 package ltd.order.cloud.newbee.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.dto.ResultGenerator;
@@ -23,11 +24,11 @@ import ltd.order.cloud.newbee.entity.MallUserAddress;
 import ltd.order.cloud.newbee.service.NewBeeMallUserAddressService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @RestController
-@Api(value = "v1", tags = "新蜂商城个人地址相关接口")
+@Tag(description = "v1", name = "新蜂商城个人地址相关接口")
 @RequestMapping("/mall")
 public class NewBeeMallUserAddressController {
 
@@ -35,15 +36,15 @@ public class NewBeeMallUserAddressController {
     private NewBeeMallUserAddressService mallUserAddressService;
 
     @GetMapping("/address")
-    @ApiOperation(value = "我的收货地址列表", notes = "")
-    public Result<List<NewBeeMallUserAddressVO>> addressList(@TokenToMallUser MallUserToken loginMallUserToken) {
+    @Operation(summary = "我的收货地址列表", description = "")
+    public Result<List<NewBeeMallUserAddressVO>> addressList(@TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         return ResultGenerator.genSuccessResult(mallUserAddressService.getMyAddresses(loginMallUserToken.getUserId()));
     }
 
     @PostMapping("/address")
-    @ApiOperation(value = "添加地址", notes = "")
+    @Operation(summary = "添加地址", description = "")
     public Result<Boolean> saveUserAddress(@RequestBody SaveMallUserAddressParam saveMallUserAddressParam,
-                                           @TokenToMallUser MallUserToken loginMallUserToken) {
+                                           @TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         MallUserAddress userAddress = new MallUserAddress();
         BeanUtil.copyProperties(saveMallUserAddressParam, userAddress);
         userAddress.setUserId(loginMallUserToken.getUserId());
@@ -57,9 +58,9 @@ public class NewBeeMallUserAddressController {
     }
 
     @PutMapping("/address")
-    @ApiOperation(value = "修改地址", notes = "")
+    @Operation(summary = "修改地址", description = "")
     public Result<Boolean> updateMallUserAddress(@RequestBody UpdateMallUserAddressParam updateMallUserAddressParam,
-                                                 @TokenToMallUser MallUserToken loginMallUserToken) {
+                                                 @TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         MallUserAddress mallUserAddressById = mallUserAddressService.getMallUserAddressById(updateMallUserAddressParam.getAddressId());
         if (!loginMallUserToken.getUserId().equals(mallUserAddressById.getUserId())) {
             return ResultGenerator.genFailResult(ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult());
@@ -77,9 +78,9 @@ public class NewBeeMallUserAddressController {
     }
 
     @GetMapping("/address/{addressId}")
-    @ApiOperation(value = "获取收货地址详情", notes = "传参为地址id")
+    @Operation(summary = "获取收货地址详情", description = "传参为地址id")
     public Result<NewBeeMallUserAddressVO> getMallUserAddress(@PathVariable("addressId") Long addressId,
-                                                              @TokenToMallUser MallUserToken loginMallUserToken) {
+                                                              @TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         MallUserAddress mallUserAddressById = mallUserAddressService.getMallUserAddressById(addressId);
         NewBeeMallUserAddressVO newBeeMallUserAddressVO = new NewBeeMallUserAddressVO();
         BeanUtil.copyProperties(mallUserAddressById, newBeeMallUserAddressVO);
@@ -90,16 +91,16 @@ public class NewBeeMallUserAddressController {
     }
 
     @GetMapping("/address/default")
-    @ApiOperation(value = "获取默认收货地址", notes = "无传参")
-    public Result getDefaultMallUserAddress(@TokenToMallUser MallUserToken loginMallUserToken) {
+    @Operation(summary = "获取默认收货地址", description = "无传参")
+    public Result getDefaultMallUserAddress(@TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         MallUserAddress mallUserAddressById = mallUserAddressService.getMyDefaultAddressByUserId(loginMallUserToken.getUserId());
         return ResultGenerator.genSuccessResult(mallUserAddressById);
     }
 
     @DeleteMapping("/address/{addressId}")
-    @ApiOperation(value = "删除收货地址", notes = "传参为地址id")
+    @Operation(summary = "删除收货地址", description = "传参为地址id")
     public Result deleteAddress(@PathVariable("addressId") Long addressId,
-                                @TokenToMallUser MallUserToken loginMallUserToken) {
+                                @TokenToMallUser @Parameter(hidden = true)  MallUserToken  loginMallUserToken) {
         MallUserAddress mallUserAddressById = mallUserAddressService.getMallUserAddressById(addressId);
         if (!loginMallUserToken.getUserId().equals(mallUserAddressById.getUserId())) {
             return ResultGenerator.genFailResult(ServiceResultEnum.REQUEST_FORBIDEN_ERROR.getResult());

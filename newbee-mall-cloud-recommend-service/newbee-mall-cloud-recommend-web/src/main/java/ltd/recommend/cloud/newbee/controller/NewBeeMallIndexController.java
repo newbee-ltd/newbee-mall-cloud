@@ -3,13 +3,13 @@
  * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
  * 本软件已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
  * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2022 程序员十三 all rights reserved.
+ * Copyright (c) 2019-2023 十三 all rights reserved.
  * 版权所有，侵权必究！
  */
 package ltd.recommend.cloud.newbee.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
 import ltd.common.cloud.newbee.dto.Result;
 import ltd.common.cloud.newbee.dto.ResultGenerator;
 import ltd.common.cloud.newbee.enums.IndexConfigTypeEnum;
@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.List;
 
 @RestController
-@Api(value = "v1", tags = "新蜂商城首页接口")
+@Tag(description = "v1", name = "新蜂商城首页接口")
 @RequestMapping("/mall/index")
 public class NewBeeMallIndexController {
 
@@ -37,7 +37,7 @@ public class NewBeeMallIndexController {
     private NewBeeMallIndexConfigService newBeeMallIndexConfigService;
 
     @GetMapping("/recommondInfos")
-    @ApiOperation(value = "获取首页数据", notes = "轮播图、新品、推荐等")
+    @Operation(summary = "获取首页数据", description = "轮播图、新品、推荐等")
     public Result<IndexInfoVO> indexInfo() {
         IndexInfoVO indexInfoVO = new IndexInfoVO();
         List<NewBeeMallIndexCarouselVO> carousels = newBeeMallCarouselService.getCarouselsForIndex(5);

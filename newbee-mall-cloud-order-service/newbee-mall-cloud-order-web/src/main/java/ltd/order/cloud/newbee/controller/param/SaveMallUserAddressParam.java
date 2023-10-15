@@ -3,12 +3,12 @@
  * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
  * 本软件已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
  * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2022 程序员十三 all rights reserved.
+ * Copyright (c) 2023 程序员十三 all rights reserved.
  * 版权所有，侵权必究！
  */
 package ltd.order.cloud.newbee.controller.param;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 /**
@@ -17,24 +17,24 @@ import lombok.Data;
 @Data
 public class SaveMallUserAddressParam {
 
-    @ApiModelProperty("收件人名称")
+    @Schema(title ="收件人名称")
     private String userName;
 
-    @ApiModelProperty("收件人联系方式")
+    @Schema(title ="收件人联系方式")
     private String userPhone;
 
-    @ApiModelProperty("是否默认地址 0-不是 1-是")
+    @Schema(title ="是否默认地址 0-不是 1-是")
     private Byte defaultFlag;
 
-    @ApiModelProperty("省")
+    @Schema(title ="省")
     private String provinceName;
 
-    @ApiModelProperty("市")
+    @Schema(title ="市")
     private String cityName;
 
-    @ApiModelProperty("区/县")
+    @Schema(title ="区/县")
     private String regionName;
 
-    @ApiModelProperty("详细地址")
+    @Schema(title ="详细地址")
     private String detailAddress;
 }

@@ -3,15 +3,14 @@
  * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
  * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
  * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2022 程序员十三 all rights reserved.
+ * Copyright (c) 2023 程序员十三 all rights reserved.
  * 版权所有，侵权必究！
  */
 package ltd.goods.cloud.newbee.controller;
 
-import io.seata.core.context.RootContext;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import ltd.common.cloud.newbee.enums.ServiceResultEnum;
 import ltd.common.cloud.newbee.dto.PageQueryUtil;
 import ltd.common.cloud.newbee.dto.Result;
@@ -32,8 +31,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +44,7 @@ import java.util.Map;
  * @link https://github.com/newbee-ltd
  */
 @RestController
-@Api(value = "v1", tags = "后台管理系统商品模块接口")
+@Tag(description = "v1", name = "后台管理系统商品模块接口")
 @RequestMapping("/goods/admin")
 public class NewBeeAdminGoodsInfoController {
 
@@ -60,11 +59,11 @@ public class NewBeeAdminGoodsInfoController {
      * 列表
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    @ApiOperation(value = "商品列表", notes = "可根据名称和上架状态筛选")
-    public Result list(@RequestParam(required = false) @ApiParam(value = "页码") Integer pageNumber,
-                       @RequestParam(required = false) @ApiParam(value = "每页条数") Integer pageSize,
-                       @RequestParam(required = false) @ApiParam(value = "商品名称") String goodsName,
-                       @RequestParam(required = false) @ApiParam(value = "上架状态 0-上架 1-下架") Integer goodsSellStatus, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "商品列表", description = "可根据名称和上架状态筛选")
+    public Result list(@RequestParam(required = false) @Parameter(description = "页码") Integer pageNumber,
+                       @RequestParam(required = false) @Parameter(description = "每页条数") Integer pageSize,
+                       @RequestParam(required = false) @Parameter(description = "商品名称") String goodsName,
+                       @RequestParam(required = false) @Parameter(description = "上架状态 0-上架 1-下架") Integer goodsSellStatus, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         if (pageNumber == null || pageNumber < 1 || pageSize == null || pageSize < 10) {
             return ResultGenerator.genFailResult("分页参数异常！");
@@ -86,8 +85,8 @@ public class NewBeeAdminGoodsInfoController {
      * 添加
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ApiOperation(value = "新增商品信息", notes = "新增商品信息")
-    public Result save(@RequestBody @Valid GoodsAddParam goodsAddParam, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "新增商品信息", description = "新增商品信息")
+    public Result save(@RequestBody @Valid GoodsAddParam goodsAddParam, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         NewBeeMallGoods newBeeMallGoods = new NewBeeMallGoods();
         BeanUtil.copyProperties(goodsAddParam, newBeeMallGoods);
@@ -104,8 +103,8 @@ public class NewBeeAdminGoodsInfoController {
      * 修改
      */
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    @ApiOperation(value = "修改商品信息", notes = "修改商品信息")
-    public Result update(@RequestBody @Valid GoodsEditParam goodsEditParam, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "修改商品信息", description = "修改商品信息")
+    public Result update(@RequestBody @Valid GoodsEditParam goodsEditParam, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         NewBeeMallGoods newBeeMallGoods = new NewBeeMallGoods();
         BeanUtil.copyProperties(goodsEditParam, newBeeMallGoods);
@@ -121,8 +120,8 @@ public class NewBeeAdminGoodsInfoController {
      * 详情
      */
     @GetMapping("/detail/{id}")
-    @ApiOperation(value = "获取单条商品信息", notes = "根据id查询")
-    public Result info(@PathVariable("id") Long id, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "获取单条商品信息", description = "根据id查询")
+    public Result info(@PathVariable("id") Long id, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         Map goodsInfo = new HashMap(8);
         NewBeeMallGoods goods = newBeeMallGoodsService.getNewBeeMallGoodsById(id);
@@ -152,8 +151,8 @@ public class NewBeeAdminGoodsInfoController {
      * 批量修改销售状态
      */
     @RequestMapping(value = "/updateStatus/{sellStatus}", method = RequestMethod.PUT)
-    @ApiOperation(value = "批量修改销售状态", notes = "批量修改销售状态")
-    public Result delete(@RequestBody BatchIdParam batchIdParam, @PathVariable("sellStatus") int sellStatus, @TokenToAdminUser LoginAdminUser adminUser) {
+    @Operation(summary = "批量修改销售状态", description = "批量修改销售状态")
+    public Result delete(@RequestBody BatchIdParam batchIdParam, @PathVariable("sellStatus") int sellStatus, @TokenToAdminUser @Parameter(hidden = true) LoginAdminUser adminUser) {
         logger.info("adminUser:{}", adminUser.toString());
         if (batchIdParam == null || batchIdParam.getIds().length < 1) {
             return ResultGenerator.genFailResult("参数异常！");
@@ -172,7 +171,7 @@ public class NewBeeAdminGoodsInfoController {
      * 详情
      */
     @GetMapping("/goodsDetail")
-    @ApiOperation(value = "获取单条商品信息", notes = "根据id查询")
+    @Operation(summary = "获取单条商品信息", description = "根据id查询")
     public Result goodsDetail(@RequestParam("goodsId") Long goodsId) {
         NewBeeMallGoods goods = newBeeMallGoodsService.getNewBeeMallGoodsById(goodsId);
         return ResultGenerator.genSuccessResult(goods);
@@ -182,7 +181,7 @@ public class NewBeeAdminGoodsInfoController {
      * 根据ids查询商品列表
      */
     @GetMapping("/listByGoodsIds")
-    @ApiOperation(value = "根据ids查询商品列表", notes = "根据ids查询")
+    @Operation(summary = "根据ids查询商品列表", description = "根据ids查询")
     public Result getNewBeeMallGoodsByIds(@RequestParam("goodsIds") List<Long> goodsIds) {
         List<NewBeeMallGoods> newBeeMallGoods = newBeeMallGoodsService.getNewBeeMallGoodsByIds(goodsIds);
         return ResultGenerator.genSuccessResult(newBeeMallGoods);
@@ -192,9 +191,8 @@ public class NewBeeAdminGoodsInfoController {
      * 修改库存
      */
     @PutMapping("/updateStock")
-    @ApiOperation(value = "修改库存", notes = "")
+    @Operation(summary = "修改库存", description = "")
     public Result updateStock(@RequestBody UpdateStockNumDTO updateStockNumDTO) {
-        System.out.println("RootContext.getXID()="+RootContext.getXID());
         return ResultGenerator.genSuccessResult(newBeeMallGoodsService.updateStockNum(updateStockNumDTO.getStockNumDTOS()));
     }
 

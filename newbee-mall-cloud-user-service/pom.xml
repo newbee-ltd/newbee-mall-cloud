@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ltd.newbee.cloud</groupId>
     <artifactId>newbee-mall-cloud-user-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>newbee-mall-cloud-user-service</name>
     <description>用户模块</description>
@@ -16,11 +16,13 @@
     <parent>
         <groupId>ltd.newbee.cloud</groupId>
         <artifactId>newbee-mall-cloud</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.3-SNAPSHOT</version>
     </parent>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <modules>
