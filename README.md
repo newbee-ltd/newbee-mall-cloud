@@ -6,9 +6,16 @@
 
 newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign + Spring Cloud Seluth + Zipkin + ELK 等技术的大型微服务实战项目。
 
+当前分支的 Spring Boot 版本为 2.6.3，Spring Cloud 版本为 2021.0.1，想要学习和使用其它版本可以直接点击下方的分支名称跳转至对应的仓库分支中。
+
+|                                              分支名称                                              | Spring Boot Version | Spring Cloud Version | Spring Cloud Alibaba Version |
+|:----------------------------------------------------------------------------------------------:|:----------------:|:----------------:|:----------------:|
+|                    [main](https://github.com/newbee-ltd/newbee-mall-cloud)                     | 2.6.3               | 2021.0.1            | 2021.0.1.0                   |
+|       [2022.x](https://github.com/newbee-ltd/newbee-mall-cloud/tree/spring-cloud-2022.x)       | 3.0.2               | 2022.0.0            | 2022.0.0.0                        |
+
 2019 年开源了第一个单体版本，由最初新蜂商城单体项目，逐步过渡到前后端分离和微服务架构的项目，到现在已经“开枝散叶”，成长为一系列的项目集合，下图为新蜂商城项目由 2019 年至 2023 年的开源历程。由基础项目慢慢优化，不断地增加技术栈，让用户学习到越来越多知识点的同时，对开源作者的技术提升也是一个很大的帮助。
 
-![newbee-mall-course-2022](./static-files/newbee-mall-course-2023.png)
+![newbee-mall-course-2023](./static-files/newbee-mall-course-2023.png)
 
 **坚持不易，如果觉得项目还不错的话可以给项目一个 Star 吧，也是对我自 2019 年开始一直更新这个项目的一种鼓励啦，谢谢各位的支持。**
 
@@ -25,10 +32,10 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 
 ## 技术选型
 
-开发框架选择如下所示。
+当前分支下的开发框架选择如下所示。
 
 | 开发框架             | 版本       |
-| -------------------- | ---------- |
+| :----------------: | :----------------: |
 | Spring Boot          | 2.6.3      |
 | Spring Cloud         | 2021.0.1   |
 | Spring Cloud Alibaba | 2021.0.1.0 |
@@ -36,19 +43,19 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 | Swagger              | 3.0.0      |
 | Lombok               | 1.18.16    |
 
-微服务组件技术选型如下所示。
+当前分支下的微服务组件技术选型如下所示。
 
-|        技术        |            组件实现             |  备注  |
-| :----------------: | :-----------------------------: | :----: |
-| 服务注册与服务发现 |              Nacos              | 已整合 |
-|      配置中心      |              Nacos              | 已整合 |
-|      服务通信      |           Open Feign            | 已整合 |
-|     负载均衡器     |    Spring Cloud Loadbalancer    | 已整合 |
-|      服务网关      |      Spring Cloud Gateway       | 已整合 |
-|       断路器       |            Sentinel             | 已整合 |
-|      链路追踪      |   Spring Cloud Sleuth、Zipkin   | 已整合 |
-|     分布式事务     |              Seata              | 已整合 |
-|      日志中心      | ElasticSearch、Logstash、Kibana | 已整合 |
+|        技术        |            组件实现             |   版本   |  备注  |
+| :----------------: | :-----------------------------: |:------:| :----: |
+| 服务注册与服务发现 |              Nacos              | 1.4.2  | 已整合 |
+|      配置中心      |              Nacos              | 1.4.2  | 已整合 |
+|      服务通信      |           Open Feign            | 3.1.1  | 已整合 |
+|     负载均衡器     |    Spring Cloud Loadbalancer    | 3.1.1  | 已整合 |
+|      服务网关      |      Spring Cloud Gateway       | 3.1.1  | 已整合 |
+|       断路器       |            Sentinel             | 1.8.4  | 已整合 |
+|      链路追踪      |   Spring Cloud Sleuth、Zipkin   | 3.1.1  | 已整合 |
+|     分布式事务     |              Seata              | 1.4.2  | 已整合 |
+|      日志中心      | ElasticSearch、Logstash、Kibana | 7.17.8 | 已整合 |
 
 ![technology-selection](./static-files/newbee-mall-cloud-technology-selection.png)
 
