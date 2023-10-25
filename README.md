@@ -6,7 +6,7 @@
 
 newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，一款基于 Spring Cloud Alibaba + Nacos + Sentinel + Seata + Spring Cloud Gateway + OpenFeign + Spring Cloud Seluth + Zipkin + ELK 等技术的大型微服务实战项目。
 
-当前分支的 Spring Boot 版本为 3.0.2，Spring Cloud 版本为 2022.0.0，想要学习和使用其它版本可以直接点击下方的分支名称跳转至对应的仓库分支中。
+当前分支的 Spring Boot 版本为 3.0.2，Spring Cloud 版本为 2022.0.0，Java 最低版本要求为 17，想要学习和使用其它版本可以直接点击下方的分支名称跳转至对应的仓库分支中。
 
 | 分支名称                                                     | Spring Boot Version | Spring Cloud Version | Spring Cloud Alibaba Version |
 | ------------------------------------------------------------ | ------------------- | -------------------- | ---------------------------- |
@@ -155,3 +155,4 @@ newbee-mall-cloud 项目是新蜂商城 newbee-mall 项目的微服务版本，�
 - [mybatis](https://github.com/mybatis/mybatis-3)
 - [projectlombok](https://github.com/projectlombok/lombok)
 - [swagger-api](https://github.com/swagger-api)
+- [springdoc](https://github.com/springdoc)
